@@ -1,0 +1,133 @@
+[23-Sep-2026 06:48:44 UTC] PHP Warning:  Unknown: Failed to open stream: No such file or directory in Unknown on line 0
+[23-Sep-2026 06:48:44 UTC] PHP Fatal error:  Failed opening required '/Volumes/Install Local/Local.app/Contents/Resources/extraResources/local-bootstrap.php' (include_path='.:/usr/share/php:/www/wp-content/pear') in Unknown on line 0
+[23-Sep-2026 06:48:44 UTC] PHP Warning:  Unknown: Failed to open stream: No such file or directory in Unknown on line 0
+[23-Sep-2026 06:48:44 UTC] PHP Fatal error:  Failed opening required '/Volumes/Install Local/Local.app/Contents/Resources/extraResources/local-bootstrap.php' (include_path='.:/usr/share/php:/www/wp-content/pear') in Unknown on line 0
+[23-Sep-2026 06:53:29 UTC] PHP Fatal error:  Uncaught ArgumentCountError: get_headers() expects at least 1 argument, 0 given in /Users/wout/Local Sites/test/app/public/wp-content/themes/dobbel/index.php:2
+Stack trace:
+#0 /Users/wout/Local Sites/test/app/public/wp-content/themes/dobbel/index.php(2): get_headers()
+#1 /Users/wout/Local Sites/test/app/public/wp-includes/template-loader.php(132): include('/Users/wout/Loc...')
+#2 /Users/wout/Local Sites/test/app/public/wp-blog-header.php(19): require_once('/Users/wout/Loc...')
+#3 /Users/wout/Local Sites/test/app/public/index.php(17): require('/Users/wout/Loc...')
+#4 {main}
+  thrown in /Users/wout/Local Sites/test/app/public/wp-content/themes/dobbel/index.php on line 2
+[23-Sep-2026 06:53:30 UTC] PHP Fatal error:  Uncaught ArgumentCountError: get_headers() expects at least 1 argument, 0 given in /Users/wout/Local Sites/test/app/public/wp-content/themes/dobbel/index.php:2
+Stack trace:
+#0 /Users/wout/Local Sites/test/app/public/wp-content/themes/dobbel/index.php(2): get_headers()
+#1 /Users/wout/Local Sites/test/app/public/wp-includes/template-loader.php(132): include('/Users/wout/Loc...')
+#2 /Users/wout/Local Sites/test/app/public/wp-blog-header.php(19): require_once('/Users/wout/Loc...')
+#3 /Users/wout/Local Sites/test/app/public/index.php(17): require('/Users/wout/Loc...')
+#4 {main}
+  thrown in /Users/wout/Local Sites/test/app/public/wp-content/themes/dobbel/index.php on line 2
+[23-Sep-2026 06:53:30 UTC] PHP Fatal error:  Uncaught ArgumentCountError: get_headers() expects at least 1 argument, 0 given in /Users/wout/Local Sites/test/app/public/wp-content/themes/dobbel/index.php:2
+Stack trace:
+#0 /Users/wout/Local Sites/test/app/public/wp-content/themes/dobbel/index.php(2): get_headers()
+#1 /Users/wout/Local Sites/test/app/public/wp-includes/template-loader.php(132): include('/Users/wout/Loc...')
+#2 /Users/wout/Local Sites/test/app/public/wp-blog-header.php(19): require_once('/Users/wout/Loc...')
+#3 /Users/wout/Local Sites/test/app/public/index.php(17): require('/Users/wout/Loc...')
+#4 {main}
+  thrown in /Users/wout/Local Sites/test/app/public/wp-content/themes/dobbel/index.php on line 2
+[30-Sep-2026 06:58:24 UTC] PHP Warning:  require(/Users/wout/Local Sites/test/app/public/wp-content/themes/dobbel/inc/seed.php): Failed to open stream: No such file or directory in /Users/wout/Local Sites/test/app/public/wp-content/themes/dobbel/functions.php on line 109
+[30-Sep-2026 06:58:24 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/Users/wout/Local Sites/test/app/public/wp-content/themes/dobbel/inc/seed.php' (include_path='.:/usr/share/php:/www/wp-content/pear') in /Users/wout/Local Sites/test/app/public/wp-content/themes/dobbel/functions.php:109
+Stack trace:
+#0 /Users/wout/Local Sites/test/app/public/wp-settings.php(747): include()
+#1 /Users/wout/Local Sites/test/app/public/wp-config.php(103): require_once('/Users/wout/Loc...')
+#2 /Users/wout/Local Sites/test/app/public/wp-load.php(50): require_once('/Users/wout/Loc...')
+#3 /Users/wout/Local Sites/test/app/public/wp-blog-header.php(13): require_once('/Users/wout/Loc...')
+#4 /Users/wout/Local Sites/test/app/public/index.php(17): require('/Users/wout/Loc...')
+#5 {main}
+  thrown in /Users/wout/Local Sites/test/app/public/wp-content/themes/dobbel/functions.php on line 109
+[30-Sep-2026 06:58:24 UTC] PHP Warning:  require(/Users/wout/Local Sites/test/app/public/wp-content/themes/dobbel/inc/seed.php): Failed to open stream: No such file or directory in /Users/wout/Local Sites/test/app/public/wp-content/themes/dobbel/functions.php on line 109
+[30-Sep-2026 06:58:24 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/Users/wout/Local Sites/test/app/public/wp-content/themes/dobbel/inc/seed.php' (include_path='.:/usr/share/php:/www/wp-content/pear') in /Users/wout/Local Sites/test/app/public/wp-content/themes/dobbel/functions.php:109
+Stack trace:
+#0 /Users/wout/Local Sites/test/app/public/wp-settings.php(747): include()
+#1 /Users/wout/Local Sites/test/app/public/wp-config.php(103): require_once('/Users/wout/Loc...')
+#2 /Users/wout/Local Sites/test/app/public/wp-load.php(50): require_once('/Users/wout/Loc...')
+#3 /Users/wout/Local Sites/test/app/public/wp-blog-header.php(13): require_once('/Users/wout/Loc...')
+#4 /Users/wout/Local Sites/test/app/public/index.php(17): require('/Users/wout/Loc...')
+#5 {main}
+  thrown in /Users/wout/Local Sites/test/app/public/wp-content/themes/dobbel/functions.php on line 109
+[30-Sep-2026 06:58:28 UTC] PHP Warning:  require(/Users/wout/Local Sites/test/app/public/wp-content/themes/dobbel/inc/seed.php): Failed to open stream: No such file or directory in /Users/wout/Local Sites/test/app/public/wp-content/themes/dobbel/functions.php on line 109
+[30-Sep-2026 06:58:28 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/Users/wout/Local Sites/test/app/public/wp-content/themes/dobbel/inc/seed.php' (include_path='.:/usr/share/php:/www/wp-content/pear') in /Users/wout/Local Sites/test/app/public/wp-content/themes/dobbel/functions.php:109
+Stack trace:
+#0 /Users/wout/Local Sites/test/app/public/wp-settings.php(747): include()
+#1 /Users/wout/Local Sites/test/app/public/wp-config.php(103): require_once('/Users/wout/Loc...')
+#2 /Users/wout/Local Sites/test/app/public/wp-load.php(50): require_once('/Users/wout/Loc...')
+#3 /Users/wout/Local Sites/test/app/public/wp-blog-header.php(13): require_once('/Users/wout/Loc...')
+#4 /Users/wout/Local Sites/test/app/public/index.php(17): require('/Users/wout/Loc...')
+#5 {main}
+  thrown in /Users/wout/Local Sites/test/app/public/wp-content/themes/dobbel/functions.php on line 109
+[14-Oct-2026 22:18:51 UTC] PHP Fatal error:  Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "dobbel_favicon" not found or invalid function name in /Users/wout/Local Sites/test/app/public/wp-includes/class-wp-hook.php:353
+Stack trace:
+#0 /Users/wout/Local Sites/test/app/public/wp-includes/class-wp-hook.php(377): WP_Hook->apply_filters(NULL, Array)
+#1 /Users/wout/Local Sites/test/app/public/wp-includes/plugin.php(523): WP_Hook->do_action(Array)
+#2 /Users/wout/Local Sites/test/app/public/wp-includes/general-template.php(3441): do_action('wp_head')
+#3 /Users/wout/Local Sites/test/app/public/wp-content/themes/dobbel/header.php(7): wp_head()
+#4 /Users/wout/Local Sites/test/app/public/wp-includes/template.php(880): require_once('/Users/wout/Loc...')
+#5 /Users/wout/Local Sites/test/app/public/wp-includes/template.php(815): load_template('/Users/wout/Loc...', true, Array)
+#6 /Users/wout/Local Sites/test/app/public/wp-includes/general-template.php(48): locate_template(Array, true, true, Array)
+#7 /Users/wout/Local Sites/test/app/public/wp-content/themes/dobbel/front-page.php(5): get_header()
+#8 /Users/wout/Local Sites/test/app/public/wp-includes/template-loader.php(132): include('/Users/wout/Loc...')
+#9 /Users/wout/Local Sites/test/app/public/wp-blog-header.php(19): require_once('/Users/wout/Loc...')
+#10 /Users/wout/Local Sites/test/app/public/index.php(17): require('/Users/wout/Loc...')
+#11 {main}
+  thrown in /Users/wout/Local Sites/test/app/public/wp-includes/class-wp-hook.php on line 353
+[14-Oct-2026 22:18:51 UTC] PHP Fatal error:  Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "dobbel_favicon" not found or invalid function name in /Users/wout/Local Sites/test/app/public/wp-includes/class-wp-hook.php:353
+Stack trace:
+#0 /Users/wout/Local Sites/test/app/public/wp-includes/class-wp-hook.php(377): WP_Hook->apply_filters(NULL, Array)
+#1 /Users/wout/Local Sites/test/app/public/wp-includes/plugin.php(523): WP_Hook->do_action(Array)
+#2 /Users/wout/Local Sites/test/app/public/wp-includes/general-template.php(3441): do_action('wp_head')
+#3 /Users/wout/Local Sites/test/app/public/wp-content/themes/dobbel/header.php(7): wp_head()
+#4 /Users/wout/Local Sites/test/app/public/wp-includes/template.php(880): require_once('/Users/wout/Loc...')
+#5 /Users/wout/Local Sites/test/app/public/wp-includes/template.php(815): load_template('/Users/wout/Loc...', true, Array)
+#6 /Users/wout/Local Sites/test/app/public/wp-includes/general-template.php(48): locate_template(Array, true, true, Array)
+#7 /Users/wout/Local Sites/test/app/public/wp-content/themes/dobbel/front-page.php(5): get_header()
+#8 /Users/wout/Local Sites/test/app/public/wp-includes/template-loader.php(132): include('/Users/wout/Loc...')
+#9 /Users/wout/Local Sites/test/app/public/wp-blog-header.php(19): require_once('/Users/wout/Loc...')
+#10 /Users/wout/Local Sites/test/app/public/index.php(17): require('/Users/wout/Loc...')
+#11 {main}
+  thrown in /Users/wout/Local Sites/test/app/public/wp-includes/class-wp-hook.php on line 353
+[14-Oct-2026 22:18:52 UTC] PHP Fatal error:  Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "dobbel_favicon" not found or invalid function name in /Users/wout/Local Sites/test/app/public/wp-includes/class-wp-hook.php:353
+Stack trace:
+#0 /Users/wout/Local Sites/test/app/public/wp-includes/class-wp-hook.php(377): WP_Hook->apply_filters(NULL, Array)
+#1 /Users/wout/Local Sites/test/app/public/wp-includes/plugin.php(523): WP_Hook->do_action(Array)
+#2 /Users/wout/Local Sites/test/app/public/wp-includes/general-template.php(3441): do_action('wp_head')
+#3 /Users/wout/Local Sites/test/app/public/wp-content/themes/dobbel/header.php(7): wp_head()
+#4 /Users/wout/Local Sites/test/app/public/wp-includes/template.php(880): require_once('/Users/wout/Loc...')
+#5 /Users/wout/Local Sites/test/app/public/wp-includes/template.php(815): load_template('/Users/wout/Loc...', true, Array)
+#6 /Users/wout/Local Sites/test/app/public/wp-includes/general-template.php(48): locate_template(Array, true, true, Array)
+#7 /Users/wout/Local Sites/test/app/public/wp-content/themes/dobbel/front-page.php(5): get_header()
+#8 /Users/wout/Local Sites/test/app/public/wp-includes/template-loader.php(132): include('/Users/wout/Loc...')
+#9 /Users/wout/Local Sites/test/app/public/wp-blog-header.php(19): require_once('/Users/wout/Loc...')
+#10 /Users/wout/Local Sites/test/app/public/index.php(17): require('/Users/wout/Loc...')
+#11 {main}
+  thrown in /Users/wout/Local Sites/test/app/public/wp-includes/class-wp-hook.php on line 353
+[14-Oct-2026 22:18:52 UTC] PHP Fatal error:  Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "dobbel_favicon" not found or invalid function name in /Users/wout/Local Sites/test/app/public/wp-includes/class-wp-hook.php:353
+Stack trace:
+#0 /Users/wout/Local Sites/test/app/public/wp-includes/class-wp-hook.php(377): WP_Hook->apply_filters(NULL, Array)
+#1 /Users/wout/Local Sites/test/app/public/wp-includes/plugin.php(523): WP_Hook->do_action(Array)
+#2 /Users/wout/Local Sites/test/app/public/wp-includes/general-template.php(3441): do_action('wp_head')
+#3 /Users/wout/Local Sites/test/app/public/wp-content/themes/dobbel/header.php(7): wp_head()
+#4 /Users/wout/Local Sites/test/app/public/wp-includes/template.php(880): require_once('/Users/wout/Loc...')
+#5 /Users/wout/Local Sites/test/app/public/wp-includes/template.php(815): load_template('/Users/wout/Loc...', true, Array)
+#6 /Users/wout/Local Sites/test/app/public/wp-includes/general-template.php(48): locate_template(Array, true, true, Array)
+#7 /Users/wout/Local Sites/test/app/public/wp-content/themes/dobbel/front-page.php(5): get_header()
+#8 /Users/wout/Local Sites/test/app/public/wp-includes/template-loader.php(132): include('/Users/wout/Loc...')
+#9 /Users/wout/Local Sites/test/app/public/wp-blog-header.php(19): require_once('/Users/wout/Loc...')
+#10 /Users/wout/Local Sites/test/app/public/index.php(17): require('/Users/wout/Loc...')
+#11 {main}
+  thrown in /Users/wout/Local Sites/test/app/public/wp-includes/class-wp-hook.php on line 353
+[15-Oct-2026 08:46:22 UTC] PHP Fatal error:  Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "dobbel_favicon" not found or invalid function name in /Users/wout/Local Sites/test/app/public/wp-includes/class-wp-hook.php:353
+Stack trace:
+#0 /Users/wout/Local Sites/test/app/public/wp-includes/class-wp-hook.php(377): WP_Hook->apply_filters(NULL, Array)
+#1 /Users/wout/Local Sites/test/app/public/wp-includes/plugin.php(523): WP_Hook->do_action(Array)
+#2 /Users/wout/Local Sites/test/app/public/wp-includes/general-template.php(3441): do_action('wp_head')
+#3 /Users/wout/Local Sites/test/app/public/wp-content/themes/dobbel/header.php(7): wp_head()
+#4 /Users/wout/Local Sites/test/app/public/wp-includes/template.php(880): require_once('/Users/wout/Loc...')
+#5 /Users/wout/Local Sites/test/app/public/wp-includes/template.php(815): load_template('/Users/wout/Loc...', true, Array)
+#6 /Users/wout/Local Sites/test/app/public/wp-includes/general-template.php(48): locate_template(Array, true, true, Array)
+#7 /Users/wout/Local Sites/test/app/public/wp-content/themes/dobbel/front-page.php(5): get_header()
+#8 /Users/wout/Local Sites/test/app/public/wp-includes/template-loader.php(132): include('/Users/wout/Loc...')
+#9 /Users/wout/Local Sites/test/app/public/wp-blog-header.php(19): require_once('/Users/wout/Loc...')
+#10 /Users/wout/Local Sites/test/app/public/index.php(17): require('/Users/wout/Loc...')
+#11 {main}
+  thrown in /Users/wout/Local Sites/test/app/public/wp-includes/class-wp-hook.php on line 353
