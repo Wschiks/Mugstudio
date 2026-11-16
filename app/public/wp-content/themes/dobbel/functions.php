@@ -199,10 +199,5 @@ function dobbel_post_meta() {
     echo '</div>';
 }
 
-/** Inline mug icon. */
-function dobbel_logo_svg() {
-    get_template_part( 'template-parts/logo' );
-}
-
 require get_template_directory() . '/inc/seed.php';
 require get_template_directory() . '/inc/support-form.php';
