@@ -3,7 +3,8 @@
 The website of MugStudio, a small indie game studio (Surf Tycoon, Dobbelen).
 It is a WordPress theme called **dobbel**: [`app/public/wp-content/themes/dobbel`](app/public/wp-content/themes/dobbel).
 
-This repo only holds the theme. WordPress itself, the database and the local settings are not in it.
+This repo holds the theme, plus a plain-HTML copy of the whole site in [`docs/`](docs) for free hosting
+(made by [`static-site/build.py`](static-site/build.py)). WordPress itself, the database and the local settings are not in it.
 
 ## What is in the theme
 
@@ -22,4 +23,4 @@ This repo only holds the theme. WordPress itself, the database and the local set
 ## Running it
 
 Locally with [Local](https://localwp.com): make a WordPress site, put the `dobbel` folder in `wp-content/themes/` and activate it.
-Putting it online: see [DEPLOY.md](DEPLOY.md).
+Putting it online (free, as plain HTML on GitHub Pages): see [DEPLOY.md](DEPLOY.md).

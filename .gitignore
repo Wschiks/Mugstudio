@@ -5,6 +5,8 @@
 !/.gitignore
 !/DEPLOY.md
 !/README.md
+!/docs/
+!/static-site/
 
 !/app/
 /app/*
