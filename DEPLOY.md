@@ -28,5 +28,10 @@ That's it: the site looks like it does on Local.
 
 ## What is not in git (on purpose)
 
-`wp-config.php`, the database dump (`app/sql/`), Local's `conf/` and `logs/`. These hold passwords, secret keys and personal data
-(like the names and emails of test persons), and the GitHub repo is public. The host makes its own `wp-config.php`.
+Only the theme is in git (see `.gitignore`). Not in it:
+
+- **WordPress itself** (`wp-admin`, `wp-includes`…): the host installs it, and updates replace it anyway.
+- **`wp-config.php`, the database dump (`app/sql/`), Local's `conf/` and `logs/`**: these hold passwords, secret keys and
+  personal data (like the names and emails of test persons), and the GitHub repo is public. The host makes its own `wp-config.php`.
+
+All of these are still on the Mac, so the local site keeps working.

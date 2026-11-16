@@ -1,17 +1,22 @@
-# Private or machine-specific: never push these to the public repo
-app/public/wp-config.php
-app/sql/
-app/.envrc
-logs/
-conf/
-app/public/local-xdebuginfo.php
+# This repo only holds MY work: the "dobbel" theme and the docs.
+# WordPress itself, wp-config.php, the database and Local's files stay on the Mac only.
+# (Ignore everything, then allow back only what is ours.)
+/*
+!/.gitignore
+!/DEPLOY.md
+!/README.md
 
-# Uploads, caches and old builds
-app/public/wp-content/uploads/
-app/public/wp-content/upgrade/
-app/public/wp-content/cache/
+!/app/
+/app/*
+!/app/public/
+/app/public/*
+!/app/public/wp-content/
+/app/public/wp-content/*
+!/app/public/wp-content/themes/
+/app/public/wp-content/themes/*
+!/app/public/wp-content/themes/dobbel/
+
+# Never, also not inside the theme
+.DS_Store
 *.zip
 *.log
-
-# macOS
-.DS_Store
