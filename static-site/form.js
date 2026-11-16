@@ -12,7 +12,7 @@
 (function () {
   'use strict';
 
-  var ACCESS_KEY = 'PASTE-YOUR-WEB3FORMS-ACCESS-KEY-HERE';
+  var ACCESS_KEY = 'ac854a3c-956a-4f3f-8328-3c91275e794a';
   var ENDPOINT = 'https://api.web3forms.com/submit';
   var SUPPORT_EMAIL = 'support@mugstudio.nl';
   var MIN = 20;
