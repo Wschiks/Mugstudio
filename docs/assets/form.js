@@ -3,9 +3,11 @@
  * Does the same as the WordPress version (same checks, same messages, same
  * confirmation screen), but sends the request through Web3Forms, which emails it to you.
  *
- * SETUP: get a free access key at https://web3forms.com (fill in support@mugstudio.nl,
- * the key arrives by email) and paste it below. The key is not a secret: Web3Forms
- * made it to sit in a public web page.
+ * SETUP: get a free access key at https://web3forms.com and paste it below. Sign up with
+ * your own inbox, not support@mugstudio.nl (that address forwards through Cloudflare Email
+ * Routing; if the forwarding breaks, form mail would get lost too). Requests are sent to the
+ * inbox you sign up with; "Reply" goes to the person who filled in the form.
+ * The key is not a secret: Web3Forms made it to sit in a public web page.
  */
 (function () {
   'use strict';

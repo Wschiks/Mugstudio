@@ -2,55 +2,59 @@
 
 There are two ways. **Option A is free** and is the one we use.
 
-| | A. Plain HTML (free) | B. WordPress hosting |
+| | A. Plain HTML on Cloudflare Pages (free) | B. WordPress hosting |
 |---|---|---|
 | Cost | €0 | about €3–5 a month |
-| Where | GitHub Pages (or Cloudflare Pages / Netlify) | Any host with WordPress |
-| Support form | Sent by Web3Forms to your mailbox | Saved in wp-admin + emailed |
+| Support form | Sent by Web3Forms to your inbox | Saved in wp-admin + emailed |
 | Changing the site | Change it in Local, run the build, push | Change it in wp-admin |
+
+How the domain is set up now:
+
+- **mugstudio.nl** is registered at **Vimexx** (domain only, no hosting) and its DNS runs on **Cloudflare**.
+- **support@mugstudio.nl** already forwards to your own inbox through **Cloudflare Email Routing**. Receiving mail is solved;
+  the website only needs to *send* the form to you.
 
 ---
 
-## A. Plain HTML on GitHub Pages (free)
+## A. Plain HTML on Cloudflare Pages (free)
 
 The `docs/` folder is a copy of the site as plain HTML, made from the Local site by
 `static-site/build.py`. It looks exactly like WordPress (checked pixel by pixel).
 
 ### One time: set it up
 
-1. **Web3Forms key (for the support form).** Go to https://web3forms.com, fill in `support@mugstudio.nl`
-   and you get an access key by email. Paste it in `static-site/form.js` at `ACCESS_KEY`.
-   (Without a key the form only pretends to send when you test it on your own computer, and online it asks people to email you.)
-2. **Your domain.** Put it in `static-site/build.py` at `SITE_URL`, for example `"https://mugstudio.nl"`.
-   That makes link previews and the sitemap use your domain.
-3. **Build and push** (Local must be running, because the build reads the pages from `test.local`):
+1. **Web3Forms key (for the support form).** Go to https://web3forms.com and sign up with **your own inbox**
+   (not support@mugstudio.nl: if the forwarding ever breaks, form mail would get lost too).
+   The access key arrives by email. Paste it in `static-site/form.js` at `ACCESS_KEY`, then build and push (see below).
+   Without a key the form only pretends to send when you test it on your own computer, and online it asks people to email you.
+2. **Make the Pages project.** In the Cloudflare dashboard: *Workers & Pages → Create → Pages → Connect to Git* →
+   choose the GitHub repo **Wschiks/Mugstudio**. Settings:
+
+   | Setting | Value |
+   |---|---|
+   | Production branch | `main` |
+   | Framework preset | None |
+   | Build command | *(leave empty)* |
+   | Build output directory | `docs` |
+
+   *Save and Deploy.* You get a test address like `mugstudio.pages.dev`; check the site there.
+3. **Connect your domain.** In the Pages project: *Custom domains → Set up a custom domain* → `mugstudio.nl` → *Activate*.
+   Do the same for `www.mugstudio.nl`. Because the domain is already in your Cloudflare account, Cloudflare makes the
+   DNS records and the HTTPS certificate itself. Nothing to change at Vimexx.
+   Leave the **MX/email records** for Email Routing alone: they are separate from the website.
+4. **Test the form for real.** Send a request on https://mugstudio.nl/support/ and check that it arrives.
+   **Look in your spam folder too**: forwarded form mail sometimes lands there. Mark it "not spam" once.
+
+### Every time you change something
+
+1. Change the site in Local (theme files or wp-admin). Local must be running.
+2. Build the copy:
 
    ```bash
    python3 static-site/build.py
    ```
 
-   Then commit and push `docs/`.
-4. **Turn on GitHub Pages.** On github.com: the repo → *Settings → Pages* →
-   *Source: Deploy from a branch* → branch `main`, folder `/docs` → *Save*.
-5. **Connect your domain.** Same page, *Custom domain*: fill in your domain and *Save*
-   (GitHub then adds a `CNAME` file to `docs/`; pull it before you build again, the build keeps it).
-   At the company where you bought the domain, set these DNS records:
-
-   | Type | Name | Value |
-   |---|---|---|
-   | A | @ | 185.199.108.153 |
-   | A | @ | 185.199.109.153 |
-   | A | @ | 185.199.110.153 |
-   | A | @ | 185.199.111.153 |
-   | CNAME | www | wschiks.github.io |
-
-   DNS can take up to a day. Then tick *Enforce HTTPS*.
-
-### Every time you change something
-
-1. Change the site in Local (theme files or wp-admin).
-2. Run `python3 static-site/build.py`.
-3. Commit and push. GitHub Pages updates within a minute or two.
+3. Commit and push. Cloudflare Pages sees the push and updates the site within a minute or two.
 
 ### Test the copy on your own computer
 
@@ -62,8 +66,8 @@ Open http://localhost:8765. The form runs in test mode there: it shows the confi
 
 ### App Store links
 
-- Support URL: `https://<your domain>/support/`
-- Privacy policy URL: `https://<your domain>/privacy/`
+- Support URL: `https://mugstudio.nl/support/`
+- Privacy policy URL: `https://mugstudio.nl/privacy/`
 
 ---
 
@@ -78,12 +82,13 @@ Open http://localhost:8765. The form runs in test mode there: it shows the confi
 
 3. **Upload and activate it** in the new site: *Appearance → Themes → Add new → Upload theme* → choose `dobbel.zip` → *Activate*.
 4. **Open the homepage once.** The theme now creates Home, News, Support, Privacy Policy, Terms of Service and the first post, sets the homepage and turns on pretty links.
+5. **Point the domain at the host** in Cloudflare DNS (the host tells you which records), keeping the Email Routing records.
 
 Before you share the link:
 
 - [ ] **Strong admin password** that you do not use anywhere else (*Users → Profile*).
 - [ ] **Admin email** set to your real address (*Settings → General*). Locally it is `dev-email@wpengine.local`.
-- [ ] **Email that really arrives.** Install the plugin **WP Mail SMTP** and connect it to the mailbox of `support@mugstudio.nl`, then send a test request.
+- [ ] **Email that really arrives.** Install the plugin **WP Mail SMTP** and connect it to a mailbox that can send, then send a test request.
 - [ ] **Search engines allowed** (*Settings → Reading → leave "Discourage search engines" unticked*).
 - [ ] **Store links** filled in for games that are live: `dobbel_game_links()` in `functions.php`.
 

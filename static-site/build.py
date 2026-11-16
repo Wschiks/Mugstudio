@@ -30,7 +30,7 @@ from datetime import date
 # ---------------------------------------------------------------- settings --
 
 SOURCE = "http://test.local"          # the Local WordPress site
-SITE_URL = ""                         # your domain, e.g. "https://mugstudio.nl" (used for link previews, sitemap)
+SITE_URL = "https://mugstudio.nl"     # the live domain (used for link previews, canonical links and the sitemap)
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(os.path.dirname(HERE), "docs")
 
