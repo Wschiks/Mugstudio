@@ -112,6 +112,48 @@ function dobbel_disable_search() {
 }
 add_action( 'template_redirect', 'dobbel_disable_search' );
 
+/** No comments, pingbacks or XML-RPC: the theme never shows them, so they would only collect spam. */
+add_filter( 'comments_open', '__return_false', 20 );
+add_filter( 'pings_open', '__return_false', 20 );
+add_filter( 'xmlrpc_enabled', '__return_false' );
+add_filter( 'xmlrpc_methods', '__return_empty_array' );
+add_filter( 'wp_headers', function ( $headers ) {
+    unset( $headers['X-Pingback'] );
+    return $headers;
+} );
+
+/** Description and link preview (Google, WhatsApp, Discord...) for every page. */
+function dobbel_meta_tags() {
+    if ( is_404() ) {
+        return;
+    }
+    $desc  = get_bloginfo( 'description' );
+    $image = dobbel_asset( 'img/surf-tycoon-banner.webp' );
+    $title = wp_get_document_title();
+    if ( is_front_page() ) {
+        $desc = 'MugStudio makes simple, friendly games for your phone: Surf Tycoon, an idle water-sports tycoon, and Dobbelen, a dice bluffing game for friends.';
+    } elseif ( is_page( 'support' ) ) {
+        $desc = 'Help with Surf Tycoon, Dobbelen and other MugStudio games: common questions and a form to send us a request.';
+    } elseif ( is_singular() ) {
+        $desc = wp_strip_all_tags( get_the_excerpt() );
+        if ( has_post_thumbnail() ) {
+            $image = get_the_post_thumbnail_url( null, 'large' );
+        }
+    }
+    $desc = wp_html_excerpt( $desc, 160, '…' );
+    $url  = is_singular() ? get_permalink() : home_url( add_query_arg( array() ) );
+
+    printf( '<meta name="description" content="%s">' . "\n", esc_attr( $desc ) );
+    printf( '<meta property="og:type" content="%s">' . "\n", is_single() ? 'article' : 'website' );
+    printf( '<meta property="og:site_name" content="%s">' . "\n", esc_attr( get_bloginfo( 'name' ) ) );
+    printf( '<meta property="og:title" content="%s">' . "\n", esc_attr( $title ) );
+    printf( '<meta property="og:description" content="%s">' . "\n", esc_attr( $desc ) );
+    printf( '<meta property="og:url" content="%s">' . "\n", esc_url( $url ) );
+    printf( '<meta property="og:image" content="%s">' . "\n", esc_url( $image ) );
+    echo '<meta name="twitter:card" content="summary_large_image">' . "\n";
+}
+add_action( 'wp_head', 'dobbel_meta_tags', 1 );
+
 /** Archive titles without the "Category:" / "Tag:" prefix. */
 add_filter( 'get_the_archive_title_prefix', '__return_empty_string' );
 
@@ -163,3 +205,4 @@ function dobbel_logo_svg() {
 }
 
 require get_template_directory() . '/inc/seed.php';
+require get_template_directory() . '/inc/support-form.php';

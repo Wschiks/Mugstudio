@@ -24,8 +24,13 @@ function dobbel_legal_terms() {
 <h2>7. Contact</h2><p>' . dobbel_legal_contact_sentence() . '</p>';
 }
 
+/** Privacy section about this website and its support form. Also used by the seed to update an existing page. */
+function dobbel_legal_privacy_website() {
+    return '<h2>This website and the support form</h2><p>This website has no accounts, no analytics and no tracking cookies. When you send a request through the support form, we receive the game, topic and device you chose, your message, your email address and, if you fill it in, your name. We use this only to answer your request. It is stored in the database of this website and in our support mailbox, it is never sold or shared, and requests are deleted automatically 12 months after they were sent. Want to see what we have, or want it deleted sooner? Email us and we will do it.</p>';
+}
+
 function dobbel_legal_privacy() {
-    return '<p><em>Last updated 21 September 2026.</em></p>
+    return '<p><em>Last updated 16 November 2026.</em></p>
 <h2>The short version</h2><p>Surf Tycoon does not collect any personal data itself and has no account or server. Everything you build stays on your device. The only exception is the optional video ad in the phone apps, which is shown by Google AdMob (see &ldquo;Ads&rdquo;).</p>
 <h2>What is stored</h2><p>Your game progress (coins, zones, upgrades and so on), the time it was last saved, and your sound setting. This is stored on your device only, in the local storage of the app or browser.</p>
 <h2>What is not collected</h2><p>The game itself collects no name, no email address, no account, no location, no contacts and no analytics. The game does not connect to any server of ours to run.</p>
@@ -33,6 +38,7 @@ function dobbel_legal_privacy() {
 <h2>Purchases</h2><p>Payments for &ldquo;Remove ads&rdquo; and &ldquo;Coins x5&rdquo; are handled entirely by Apple or Google. We never see your name, card or other payment details. The game only learns whether the store says you own an item, and remembers that on your device.</p>
 <h2>Third parties</h2><p>Apart from Google AdMob for the optional ads and the App Store or Google Play for purchases, there are no third-party services in the game. If you play in a web browser, the website that hosts the game can see normal technical information (like your IP address) in its own logs, as with any website.</p>
 <h2>Your choices</h2><p>You can delete all data the game stores at any time with &ldquo;Start over&rdquo; in the menu, or by clearing the site or app data.</p>
+' . dobbel_legal_privacy_website() . '
 <h2>Children</h2><p>The game does not ask for any personal information. Ads are optional and only start when you choose to watch one.</p>
 <h2>Changes and contact</h2><p>If this ever changes (for example when online features are added), this policy will be updated before it does. ' . dobbel_legal_contact_sentence() . '</p>';
 }

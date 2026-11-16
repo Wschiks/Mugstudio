@@ -105,7 +105,7 @@ get_header();
         <h2>Questions, ideas or a bug?</h2>
         <p>We read every message. Send us a note and we will get back to you.</p>
       </div>
-      <a class="btn btn--light" href="<?php echo home_url( '/support/' ); ?>">Visit support</a>
+      <a class="btn btn--light" href="<?php echo home_url( '/support/#contact' ); ?>">Send us a request</a>
     </div>
   </section>
 

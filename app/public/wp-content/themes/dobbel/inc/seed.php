@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-const DOBBEL_SEED_VERSION = 2;
+const DOBBEL_SEED_VERSION = 3;
 
 function dobbel_seed_page( $slug, $title, $content = '' ) {
     $existing = get_page_by_path( $slug );
@@ -84,6 +84,19 @@ function dobbel_seed() {
             wp_update_post( array( 'ID' => $page->ID, 'post_content' => $fn() ) );
         }
     }
+
+    // v3: the support form collects an email address, so the privacy policy gets a section about it.
+    // Only touches the page we wrote ourselves (it still has "The short version"), never a rewritten one.
+    $privacy = get_page_by_path( 'privacy' );
+    if ( $privacy && false !== strpos( $privacy->post_content, 'The short version' ) && false === strpos( $privacy->post_content, 'support form' ) ) {
+        wp_update_post( array( 'ID' => $privacy->ID, 'post_content' => dobbel_legal_privacy() ) );
+    }
+
+    // v3: the theme shows no comments, so close them (otherwise spam piles up unseen).
+    update_option( 'default_comment_status', 'closed' );
+    update_option( 'default_ping_status', 'closed' );
+    global $wpdb;
+    $wpdb->query( "UPDATE {$wpdb->posts} SET comment_status = 'closed', ping_status = 'closed' WHERE comment_status = 'open' OR ping_status = 'open'" );
 
     update_option( 'dobbel_seed_version', DOBBEL_SEED_VERSION );
     flush_rewrite_rules( false );

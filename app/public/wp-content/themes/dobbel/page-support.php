@@ -18,9 +18,9 @@ $email = dobbel_contact_email();
     <div class="card contact-card">
       <div>
         <h2><?php esc_html_e( 'Contact us', 'dobbel' ); ?></h2>
-        <p><?php esc_html_e( 'Send us an email and mention the game and your device. We usually reply within a few days.', 'dobbel' ); ?></p>
+        <p><?php esc_html_e( 'Check the common questions below first. Not there? Send us a request and we reply within 3 working days.', 'dobbel' ); ?></p>
       </div>
-      <a class="btn" href="mailto:<?php echo esc_attr( antispambot( $email ) ); ?>"><?php echo esc_html( antispambot( $email ) ); ?></a>
+      <a class="btn btn--light" href="#contact"><?php esc_html_e( 'Send a request', 'dobbel' ); ?></a>
     </div>
 
     <?php if ( trim( get_the_content() ) ) : ?>
@@ -75,6 +75,13 @@ $email = dobbel_contact_email();
         <div><?php esc_html_e( 'No. The game collects nothing and makes no network requests.', 'dobbel' ); ?></div>
       </details>
     </div>
+
+    <?php get_template_part( 'template-parts/support-form' ); ?>
+
+    <p class="muted small" style="margin-top:20px">
+      <?php esc_html_e( 'Prefer email?', 'dobbel' ); ?>
+      <a href="mailto:<?php echo esc_attr( antispambot( $email ) ); ?>"><?php echo esc_html( antispambot( $email ) ); ?></a>
+    </p>
   </article>
 <?php endwhile; ?>
 </div>

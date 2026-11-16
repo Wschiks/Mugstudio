@@ -1,0 +1,17 @@
+# Private or machine-specific: never push these to the public repo
+app/public/wp-config.php
+app/sql/
+app/.envrc
+logs/
+conf/
+app/public/local-xdebuginfo.php
+
+# Uploads, caches and old builds
+app/public/wp-content/uploads/
+app/public/wp-content/upgrade/
+app/public/wp-content/cache/
+*.zip
+*.log
+
+# macOS
+.DS_Store
