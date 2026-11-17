@@ -219,6 +219,14 @@ def main():
     write("robots.txt", robots)
     write(".nojekyll", "")  # GitHub Pages: serve the files as they are
 
+    # Files that must sit in the root of the site as they are (e.g. the Google Search Console check)
+    extra = os.path.join(HERE, "extra")
+    if os.path.isdir(extra):
+        for name in sorted(os.listdir(extra)):
+            if not name.startswith("."):
+                shutil.copy(os.path.join(extra, name), os.path.join(OUT, name))
+                print(f"  extra {name}")
+
     print(f"\nDone: {len(pages)} pages and {len(done)} files in {OUT}")
 
 
