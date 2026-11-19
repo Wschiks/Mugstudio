@@ -47,9 +47,10 @@ function dobbel_favicon() {
         return;
     }
     $svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><g fill="#0a0a0a"><ellipse cx="21" cy="11" rx="3.4" ry="10" transform="rotate(-32 21 11)"/><ellipse cx="29" cy="10" rx="3.2" ry="9" transform="rotate(14 29 10)"/><ellipse cx="15" cy="27.5" rx="11" ry="4.4" transform="rotate(-24 15 27.5)"/><circle cx="27" cy="24" r="5"/><circle cx="34" cy="25" r="3.6"/></g><path d="M37 26.5 46 33M22 28l-8 8-1 7M26 29l-3 10-1 6M29 28l6 8 3 7" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round"/></svg>';
-    echo '<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,' . rawurlencode( $svg ) . '">' . "\n";
-    // Safari ignores SVG icons, so also offer a PNG.
+    // PNG first: Google's search results use the first icon it can fetch as a real file, and it skips data: URLs.
+    // Safari also ignores SVG icons, so the PNG covers it too.
     echo '<link rel="icon" type="image/png" sizes="512x512" href="' . esc_url( dobbel_asset( 'favicon.png' ) ) . '">' . "\n";
+    echo '<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,' . rawurlencode( $svg ) . '">' . "\n";
     echo '<link rel="apple-touch-icon" href="' . esc_url( dobbel_asset( 'favicon.png' ) ) . '">' . "\n";
 }
 add_action( 'wp_head', 'dobbel_favicon');
